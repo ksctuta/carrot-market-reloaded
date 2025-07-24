@@ -89,12 +89,14 @@ pnpm-debug.log*
 ```json
 {
   "scripts": {
-    "dev": "next dev -p 3030",
+    "dev": "next dev --turbopack -p 3030",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "jest"
-  }
+    "start": "next start -p 3030",
+    "lint": "eslint \"./**/*.+(ts|tsx)\"",
+    "lint:fix": "eslint \"./**/*.+(ts|tsx)\" --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
 }
 ```
 
@@ -202,9 +204,13 @@ npm run dev
 
 ---
 
-## 코드 컨벤션 필수 적용 (Eslint + Prettier 스타일)
+## Front-End 코드 컨벤션 필독사항 (Eslint + Prettier 스타일)
 
-> [README_CODE_CONVENSION.md](README_CODE_CONVENSION.md)
+> 개발자 & 퍼블리셔 필독사항 : [README-CODE-CONVENSION.md](README-CODE-CONVENSION.md)
+
+## VSCode 확장 프로그램 설치 - SETUP GUIDE 
+
+> 개발자 & 퍼블리셔 필독사항 : [README-VSCODE-SETUP-GUIDE.md](README-VSCODE-SETUP-GUIDE.md)
 
 ## 📚 기타
 
@@ -249,3 +255,228 @@ npm install -D eslint
 > 라이브러리 추가 후 `package-lock.json` 또는 `yarn.lock` 파일도 함께 변경됩니다.
 
 ---
+
+## 🧩 VSCode 확장 프로그램 설치
+
+먼저 아래 확장 프로그램을 설치하세요.
+
+- **ESLint** (필수)  
+  - Marketplace 링크: [ESLint - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)  
+  - 기능: 코드 내 ESLint 규칙 위반을 실시간으로 검사하고, 자동 수정 기능 제공  
+
+- **Prettier - Code formatter** (필수)  
+  - Marketplace 링크: [Prettier - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)  
+  - 기능: 코드 포맷팅을 자동으로 해주는 인기 있는 도구  
+
+- **Tailwind CSS IntelliSense** (필수)  
+  - Marketplace 링크: [Tailwind CSS - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)  
+  - 기능: Tailwind CSS 클래스 자동완성, 문서 툴팁, 색상 미리보기 등 지원 (Next.js 사용 시 특히 유용)  
+
+- **Material Icon Theme** (선택)  
+  - Marketplace 링크: [Material Icon Theme - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme)  
+  - 기능: 폴더 및 파일에 직관적인 아이콘 테마 적용으로 가독성과 생산성 향상  
+
+- **Korean Language Pack** (선택)  
+  - Marketplace 링크: [Korean Language Pack - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ko)  
+  - 기능: VSCode UI를 한국어로 표시하여 보다 친숙한 개발 환경 제공  
+
+---
+
+## ⚙️ VSCode 설정 열기
+
+- VSCode 상단 메뉴 `파일 > 기본 설정 > 설정` (또는 단축키: `Ctrl + ,`) 을 클릭하세요.  
+- 오른쪽 상단의 아이콘 중 **열기 아이콘 (Open Settings JSON)** 을 클릭하여 `settings.json` 파일을 엽니다.
+
+---
+
+## 🛠️ `settings.json`에 아래 내용 추가
+
+```json
+{
+  // 파일 저장 시 자동 포맷 적용
+  "editor.formatOnSave": true,
+
+  // 기본 포맷터로 Prettier 지정
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 저장 시 ESLint가 자동으로 fix (권장 방식: explicit)
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // ESLint 포맷 기능 사용
+  "eslint.format.enable": true,
+
+  // 상태 표시줄에 ESLint 항상 표시
+  "eslint.alwaysShowStatus": true,
+
+  // ESLint가 검사할 파일 유형 지정
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // 프로젝트에 .prettierrc 있을 때만 Prettier 활성화 (중복 방지)
+  "prettier.requireConfig": true,
+
+  // 탐색기에서 폴더 구조를 좀 더 보기 쉽게
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+
+  // 파일 이동 시 import 경로 자동 업데이트
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // 💡 파일 유형별 포맷터 지정 (Prettier + ESLint 조합 사용 시)
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+
+  // 💡 JSON 스키마 확장 포인트 (필요 시 추가)
+  "json.schemas": []
+}
+```
+
+---
+
+# 🧭 Front-End 코드 컨벤션
+
+본 프로젝트는 **Next.js 15**, **React 19**, **TypeScript**, **TailwindCSS** 기반의 프론트엔드 애플리케이션입니다. 일관된 개발 환경과 유지보수를 위해 아래의 코드 컨벤션을 따릅니다.
+
+---
+
+## 📁 프로젝트 구조 규칙
+
+- 디렉토리 구조는 **기능 중심 (feature-based)** 으로 구성합니다.
+- `pages/`, `app/`, `components/`, `hooks/`, `utils/`, `styles/`, `types/` 등은 최상위에 위치합니다.
+
+```ts
+// ❌ 지양
+import Button from '@/components/Button';
+
+// ✅ 지향
+import Button from '../../../components/Button';
+```
+
+---
+
+## 🧠 코드 스타일 규칙
+
+### ✅ 파일 & 컴포넌트 명명
+
+- 파일 이름: `camelCase` (ex. `userCard.tsx`)
+- 컴포넌트 이름: `PascalCase` (ex. `UserCard`)
+- 훅: `use` 접두사로 시작 (ex. `useUserData`)
+- 스타일 모듈: `*.module.css` 또는 TailwindCSS 사용
+
+---
+
+## 🛠️ Lint & Format 설정
+
+- **ESLint** + **Prettier** + **TypeScript**
+- 저장 시 자동 포맷 (`editor.formatOnSave`: `true`)
+- Prettier 설정:
+  - 세미콜론 사용 (`semi: true`)
+  - 큰따옴표 사용 (`singleQuote: false`)
+  - 줄 최대 길이 80자 (`printWidth: 80`)
+  - 들여쓰기 2칸 (`tabWidth: 2`)
+  - 마지막 쉼표 유지 (`trailingComma: es5`)
+
+```jsonc
+// .prettierrc
+{
+  "semi": true,
+  "singleQuote": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "endOfLine": "auto"
+}
+```
+
+---
+
+## 💅 TailwindCSS 스타일 가이드
+
+- `@apply`는 가능한 최소화하고, 클래스 utility 우선 사용
+- 클래스 순서는 `레이아웃 → 박스모델 → 타이포그래피 → 상태 → 반응형` 순
+- 조건부 클래스는 `clsx` 또는 `classnames` 사용
+
+```tsx
+// ✅ 권장 예시
+<button
+  className="flex items-center justify-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700"
+>
+  Click me
+</button>
+```
+
+---
+
+## 🧪 테스트 (선택 사항)
+
+- 컴포넌트 단위 테스트는 [Jest](https://jestjs.io/) 또는 [React Testing Library](https://testing-library.com/) 사용
+- 파일명은 `*.test.tsx`, 테스트 대상과 동일 폴더에 위치
+
+---
+
+## 🧾 커밋 메시지 컨벤션
+
+급할때는 어쩔 수 없지만, 가급적이면
+
+[Conventional Commits](https://www.conventionalcommits.org/) 표준을 따릅니다.
+
+- `feat`: 새로운 기능
+- `fix`: 버그 수정
+- `docs`: 문서 변경
+- `style`: 코드 스타일 변경 (기능 X)
+- `refactor`: 코드 리팩토링
+- `test`: 테스트 코드 추가/수정
+- `chore`: 빌드/배포 설정 등 기타
+
+예시:
+
+```bash
+git commit -m "feat: 사용자 로그인 페이지 추가"
+```
+
+---
+
+## 📌 기타 권장 사항
+
+- `console.log`는 커밋 전에 제거
+- React 19 기준 `use` 프리픽스 훅 사용 시 `Suspense`와 함께 사용할 것
+- 서버 컴포넌트 / 클라이언트 컴포넌트 구분 명확히 (`"use client"`)
+
+---
+
+## 📦 주요 도구 버전
+
+| 도구              | 버전          |
+|-------------------|---------------|
+| Next.js           | 15.x          |
+| React             | 19.x          |
+| TypeScript        | 최신 (5.x 이상) |
+| Tailwind CSS      | 최신 (4.x 이상) |
+| ESLint            | Flat config 사용 |
+| Prettier          | 최신          |
+
+---
+
+> 📁 참고 파일: `.eslintrc.mjs`, `eslint.config.mjs`, `tsconfig.json`, `.prettierrc`, `.vscode/settings.json`
