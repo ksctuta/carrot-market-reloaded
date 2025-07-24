@@ -24,17 +24,17 @@ const __dirname = path.dirname(__filename);
 
 // 기존 ESLint config와 호환되도록 도와주는 compat 객체 생성
 const compat = new FlatCompat({
-  baseDirectory: __dirname,            // 기준 경로 설정
+  baseDirectory: __dirname, // 기준 경로 설정
   recommendedConfig: js.configs.recommended, // 기본 권장 config
-  allConfig: js.configs.all,                 // 전체 config도 포함 가능 (사용 안 함)
+  allConfig: js.configs.all, // 전체 config도 포함 가능 (사용 안 함)
 });
 
-// ⚙️ 기본 설정 시작 (Flat Config 배열 형식으로 export)
+// 기본 설정 시작 (Flat Config 배열 형식으로 export)
 export default [
-  // 📌 Next.js 및 Prettier 관련 추천 설정들 확장
+  // Next.js 및 Prettier 관련 추천 설정들 확장
   ...compat.extends("next", "next/core-web-vitals", "prettier"),
 
-  // 📌 공통 규칙 설정
+  // 공통 규칙 설정
   {
     plugins: {
       prettier, // Prettier 플러그인 적용
@@ -66,16 +66,18 @@ export default [
     },
   },
 
-  // 📌 TypeScript 전용 규칙 설정 (plugin:@typescript-eslint/recommended)
-  ...compat.extends(
-    "plugin:@typescript-eslint/recommended", // TypeScript 추천 규칙
-    "prettier"                               // Prettier와 충돌 제거
-  ).map((config) => ({
-    ...config,
-    files: ["**/*.+(ts|tsx)"], // 해당 규칙은 TypeScript 파일에만 적용
-  })),
+  // TypeScript 전용 규칙 설정 (plugin:@typescript-eslint/recommended)
+  ...compat
+    .extends(
+      "plugin:@typescript-eslint/recommended", // TypeScript 추천 규칙
+      "prettier", // Prettier와 충돌 제거
+    )
+    .map((config) => ({
+      ...config,
+      files: ["**/*.+(ts|tsx)"], // 해당 규칙은 TypeScript 파일에만 적용
+    })),
 
-  // 📌 추가적인 TypeScript 세부 규칙
+  // 추가적인 TypeScript 세부 규칙
   {
     files: ["**/*.+(ts|tsx)"], // TypeScript 파일만 해당
     plugins: {

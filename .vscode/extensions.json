@@ -1,0 +1,12 @@
+// VSCode 팀원 추천 확장 자동 알림 설정
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",         // ESLint 지원
+    "esbenp.prettier-vscode",         // Prettier (비활성화 시에도 설치 권장)
+    "bradlc.vscode-tailwindcss",      // Tailwind CSS 지원 (Next.js 사용 시 필수 추천)
+    "ms-vscode.vscode-typescript-next", // 최신 TypeScript 버전 사용
+    "firsttris.vscode-jest-runner",   // Jest 테스트 러너 (테스트 사용 시)
+    "yoavbls.pretty-ts-errors",       // TypeScript 에러 설명을 더 보기 쉽게
+    "usernamehw.errorlens"            // 코드에서 오류를 바로 강조 (경고/에러 가시화)
+  ]
+}

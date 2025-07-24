@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# .vscode 예외 처리 팀원 공유를 위해
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
 # dependencies
 /node_modules
 /.pnp
@@ -39,3 +44,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 환경 변수
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local

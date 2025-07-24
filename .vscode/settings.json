@@ -1,0 +1,30 @@
+{
+  // ESLint 포맷터로 사용
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+
+  // 저장할 때 ESLint 자동 수정
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // 파일 저장 시 포맷 자동 적용
+  "editor.formatOnSave": true,
+
+  // TypeScript/JavaScript 파일에 대해서만 ESLint 포맷터 사용
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+
+  // Prettier나 다른 포맷터가 충돌하지 않도록
+  "prettier.enable": false
+}
