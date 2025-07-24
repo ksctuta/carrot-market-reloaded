@@ -4,9 +4,11 @@
     "dbaeumer.vscode-eslint",         // ESLint 지원
     "esbenp.prettier-vscode",         // Prettier (비활성화 시에도 설치 권장)
     "bradlc.vscode-tailwindcss",      // Tailwind CSS 지원 (Next.js 사용 시 필수 추천)
-    "ms-vscode.vscode-typescript-next", // 최신 TypeScript 버전 사용
-    "firsttris.vscode-jest-runner",   // Jest 테스트 러너 (테스트 사용 시)
-    "yoavbls.pretty-ts-errors",       // TypeScript 에러 설명을 더 보기 쉽게
-    "usernamehw.errorlens"            // 코드에서 오류를 바로 강조 (경고/에러 가시화)
+    "pkief.material-icon-theme",      // 폴더 및 파일에 직관적인 아이콘 테마 적용으로 가독성과 생산성 향상
+    "MS-CEINTL.vscode-language-pack-ko" // VSCode UI를 한국어로 표시하여 보다 친숙한 개발 환경 제공  
+    // "ms-vscode.vscode-typescript-next", // 최신 TypeScript 버전 사용
+    // "firsttris.vscode-jest-runner",   // Jest 테스트 러너 (테스트 사용 시)
+    // "yoavbls.pretty-ts-errors",       // TypeScript 에러 설명을 더 보기 쉽게
+    // "usernamehw.errorlens"            // 코드에서 오류를 바로 강조 (경고/에러 가시화)
   ]
 }
