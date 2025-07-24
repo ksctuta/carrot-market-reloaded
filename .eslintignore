@@ -1,7 +1,0 @@
-# .eslintignore
-.next/
-node_modules/
-dist/
-out/
-# eslint.config.mjs
-#postcss.config.mjs

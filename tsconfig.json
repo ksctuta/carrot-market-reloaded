@@ -1,5 +1,5 @@
 {
-  "compilerOptions": {    
+  "compilerOptions": {        
     "target": "ES2017", // ECMAScript 기능을 사용 ES2017, ES2022    
     "lib": ["dom", "dom.iterable", "esnext"], // 사용할 라이브러리 정의 (DOM 관련 및 최신 ES 기능 포함)
     "allowJs": true, // JS 파일도 허용 (필요 없다면 false로 설정)

@@ -202,7 +202,7 @@ npm run dev
 
 ---
 
-## 코드 컨벤션 필수 적용 (Airbnb + Prettier 스타일)
+## 코드 컨벤션 필수 적용 (Eslint + Prettier 스타일)
 
 > [README_CODE_CONVENSION.md](README_CODE_CONVENSION.md)
 
