@@ -1,0 +1,7 @@
+@import "tailwindcss";
+/* 
+Tailwindcss 4.x 변경이후 상단 import 방식으로 변경되어 해당 부분 생략됨.
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ */

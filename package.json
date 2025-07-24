@@ -1,0 +1,41 @@
+{
+  "name": "carrot-market-reloaded",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "eslint-prettier-next15": "./bin/install.js"
+  },
+  "scripts": {
+    "dev": "next dev --turbopack -p 3030",
+    "build": "next build",
+    "start": "next start -p 3030",
+    "lint": "eslint \"./**/*.+(ts|tsx)\"",
+    "lint:fix": "eslint \"./**/*.+(ts|tsx)\" --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "dependencies": {
+    "next": "15.4.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.18.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^15.4.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-sort-json": "^4.1.1",
+    "typescript": "~5.3.0"
+  }
+}

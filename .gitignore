@@ -1,9 +1,26 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+<<<<<<< HEAD
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+=======
+# .vscode 예외 처리 팀원 공유를 위해
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+>>>>>>> master
 
 # testing
 /coverage
@@ -23,10 +40,17 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 
 # local env files
 .env*.local
 .env
+=======
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+>>>>>>> master
 
 # vercel
 .vercel
@@ -34,3 +58,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+<<<<<<< HEAD
+=======
+
+# 환경 변수
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+>>>>>>> master

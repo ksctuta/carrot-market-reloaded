@@ -1,0 +1,59 @@
+{
+  // 파일 저장 시 자동 포맷 적용
+  "editor.formatOnSave": true,
+
+  // 기본 포맷터로 Prettier 지정
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 저장 시 ESLint가 자동으로 fix (권장 방식: explicit)
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // ESLint 포맷 기능 사용
+  "eslint.format.enable": true,
+
+  // 상태 표시줄에 ESLint 항상 표시
+  "eslint.alwaysShowStatus": true,
+
+  // ESLint가 검사할 파일 유형 지정
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // 프로젝트에 .prettierrc 있을 때만 Prettier 활성화 (중복 방지)
+  "prettier.requireConfig": true,
+
+  // 탐색기에서 폴더 구조를 좀 더 보기 쉽게
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+
+  // 파일 이동 시 import 경로 자동 업데이트
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // 💡 파일 유형별 포맷터 지정 (Prettier + ESLint 조합 사용 시)
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+
+  // 💡 JSON 스키마 확장 포인트 (필요 시 추가)
+  "json.schemas": []
+}
