@@ -1,0 +1,19 @@
+# 최상위 설정임을 명시
+root = true
+
+# 모든 파일에 적용되는 설정
+[*]
+# 문자 인코딩은 UTF-8로 설정
+charset = utf-8
+
+# 줄바꿈은 LF 사용 (Unix 스타일) - ␍ 문제 방지
+end_of_line = lf
+
+# 파일 끝에 항상 빈 줄 삽입
+insert_final_newline = true
+
+# 들여쓰기는 스페이스 사용
+indent_style = space
+
+# 들여쓰기 크기 2칸
+indent_size = 2

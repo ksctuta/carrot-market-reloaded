@@ -66,7 +66,7 @@ export default [
           printWidth: 80, // 줄 길이 제한
           tabWidth: 2, // 들여쓰기 2칸
           trailingComma: "es5", // 객체/배열 마지막 쉼표
-          endOfLine: "auto", // 운영체제에 맞게 줄바꿈 자동 처리
+          endOfLine: "lf", // 운영체제에 맞게 줄바꿈 자동 처리
         },
       ],
 

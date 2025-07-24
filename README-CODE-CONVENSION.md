@@ -13,10 +13,10 @@
 
 ```ts
 // ❌ 지양
-import Button from '@/components/Button';
+import Button from "@/components/Button";
 
 // ✅ 지향
-import Button from '../../../components/Button';
+import Button from "../../../components/Button";
 ```
 
 ---
@@ -51,7 +51,7 @@ import Button from '../../../components/Button';
   "printWidth": 80,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "endOfLine": "auto"
+  "endOfLine": "lf",
 }
 ```
 
@@ -65,9 +65,7 @@ import Button from '../../../components/Button';
 
 ```tsx
 // ✅ 권장 예시
-<button
-  className="flex items-center justify-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700"
->
+<button className="flex items-center justify-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700">
   Click me
 </button>
 ```
@@ -113,14 +111,14 @@ git commit -m "feat: 사용자 로그인 페이지 추가"
 
 ## 📦 주요 도구 버전
 
-| 도구              | 버전          |
-|-------------------|---------------|
-| Next.js           | 15.x          |
-| React             | 19.x          |
-| TypeScript        | 최신 (5.x 이상) |
-| Tailwind CSS      | 최신 (4.x 이상) |
-| ESLint            | Flat config 사용 |
-| Prettier          | 최신          |
+| 도구         | 버전             |
+| ------------ | ---------------- |
+| Next.js      | 15.x             |
+| React        | 19.x             |
+| TypeScript   | 최신 (5.x 이상)  |
+| Tailwind CSS | 최신 (4.x 이상)  |
+| ESLint       | Flat config 사용 |
+| Prettier     | 최신             |
 
 ---
 

@@ -5,6 +5,9 @@
   // 기본 포맷터로 Prettier 지정
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
+  // 줄바꿈은 LF 사용 (Windows의 CRLF 방지)
+  "files.eol": "\n",
+
   // 저장 시 ESLint가 자동으로 fix (권장 방식: explicit)
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"

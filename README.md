@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 # carrot-market-reloaded
-nextjs14
-=======
+
+# nextjs14
+
 ### .md 파일은 단축키 Ctrl+Shift+V 사용해서 보세요. (VS Code)
 
 # Carrot Market Reloaded
@@ -100,7 +100,7 @@ pnpm-debug.log*
     "lint:fix": "eslint \"./**/*.+(ts|tsx)\" --fix",
     "format": "prettier . --write",
     "format:check": "prettier . --check"
-  },
+  }
 }
 ```
 
@@ -212,7 +212,7 @@ npm run dev
 
 > 개발자 & 퍼블리셔 필독사항 : [README-CODE-CONVENSION.md](README-CODE-CONVENSION.md)
 
-## VSCode 확장 프로그램 설치 - SETUP GUIDE 
+## VSCode 확장 프로그램 설치 - SETUP GUIDE
 
 > 개발자 & 퍼블리셔 필독사항 : [README-VSCODE-SETUP-GUIDE.md](README-VSCODE-SETUP-GUIDE.md)
 
@@ -264,31 +264,35 @@ npm install -D eslint
 
 먼저 아래 확장 프로그램을 설치하세요.
 
-- **ESLint** (필수)  
-  - Marketplace 링크: [ESLint - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)  
-  - 기능: 코드 내 ESLint 규칙 위반을 실시간으로 검사하고, 자동 수정 기능 제공  
+- **ESLint** (필수)
 
-- **Prettier - Code formatter** (필수)  
-  - Marketplace 링크: [Prettier - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)  
-  - 기능: 코드 포맷팅을 자동으로 해주는 인기 있는 도구  
+  - Marketplace 링크: [ESLint - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - 기능: 코드 내 ESLint 규칙 위반을 실시간으로 검사하고, 자동 수정 기능 제공
 
-- **Tailwind CSS IntelliSense** (필수)  
-  - Marketplace 링크: [Tailwind CSS - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)  
-  - 기능: Tailwind CSS 클래스 자동완성, 문서 툴팁, 색상 미리보기 등 지원 (Next.js 사용 시 특히 유용)  
+- **Prettier - Code formatter** (필수)
 
-- **Material Icon Theme** (선택)  
-  - Marketplace 링크: [Material Icon Theme - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme)  
-  - 기능: 폴더 및 파일에 직관적인 아이콘 테마 적용으로 가독성과 생산성 향상  
+  - Marketplace 링크: [Prettier - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  - 기능: 코드 포맷팅을 자동으로 해주는 인기 있는 도구
 
-- **Korean Language Pack** (선택)  
-  - Marketplace 링크: [Korean Language Pack - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ko)  
-  - 기능: VSCode UI를 한국어로 표시하여 보다 친숙한 개발 환경 제공  
+- **Tailwind CSS IntelliSense** (필수)
+
+  - Marketplace 링크: [Tailwind CSS - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+  - 기능: Tailwind CSS 클래스 자동완성, 문서 툴팁, 색상 미리보기 등 지원 (Next.js 사용 시 특히 유용)
+
+- **Material Icon Theme** (선택)
+
+  - Marketplace 링크: [Material Icon Theme - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme)
+  - 기능: 폴더 및 파일에 직관적인 아이콘 테마 적용으로 가독성과 생산성 향상
+
+- **Korean Language Pack** (선택)
+  - Marketplace 링크: [Korean Language Pack - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ko)
+  - 기능: VSCode UI를 한국어로 표시하여 보다 친숙한 개발 환경 제공
 
 ---
 
 ## ⚙️ VSCode 설정 열기
 
-- VSCode 상단 메뉴 `파일 > 기본 설정 > 설정` (또는 단축키: `Ctrl + ,`) 을 클릭하세요.  
+- VSCode 상단 메뉴 `파일 > 기본 설정 > 설정` (또는 단축키: `Ctrl + ,`) 을 클릭하세요.
 - 오른쪽 상단의 아이콘 중 **열기 아이콘 (Open Settings JSON)** 을 클릭하여 `settings.json` 파일을 엽니다.
 
 ---
@@ -372,10 +376,10 @@ npm install -D eslint
 
 ```ts
 // ❌ 지양
-import Button from '@/components/Button';
+import Button from "@/components/Button";
 
 // ✅ 지향
-import Button from '../../../components/Button';
+import Button from "../../../components/Button";
 ```
 
 ---
@@ -410,7 +414,7 @@ import Button from '../../../components/Button';
   "printWidth": 80,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "endOfLine": "auto"
+  "endOfLine": "lf",
 }
 ```
 
@@ -424,9 +428,7 @@ import Button from '../../../components/Button';
 
 ```tsx
 // ✅ 권장 예시
-<button
-  className="flex items-center justify-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700"
->
+<button className="flex items-center justify-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700">
   Click me
 </button>
 ```
@@ -472,16 +474,29 @@ git commit -m "feat: 사용자 로그인 페이지 추가"
 
 ## 📦 주요 도구 버전
 
-| 도구              | 버전          |
-|-------------------|---------------|
-| Next.js           | 15.x          |
-| React             | 19.x          |
-| TypeScript        | 최신 (5.x 이상) |
-| Tailwind CSS      | 최신 (4.x 이상) |
-| ESLint            | Flat config 사용 |
-| Prettier          | 최신          |
+| 도구         | 버전             |
+| ------------ | ---------------- |
+| Next.js      | 15.x             |
+| React        | 19.x             |
+| TypeScript   | 최신 (5.x 이상)  |
+| Tailwind CSS | 최신 (4.x 이상)  |
+| ESLint       | Flat config 사용 |
+| Prettier     | 최신             |
 
 ---
 
 > 📁 참고 파일: `.eslintrc.mjs`, `eslint.config.mjs`, `tsconfig.json`, `.prettierrc`, `.vscode/settings.json`
->>>>>>> master
+
+## ✅ 줄바꿈(EOL) CRLF 오류 시 LF로 Git을 통해 통일
+
+.gitattributes 설정 방식
+
+```
+# Git에 등록된 파일 제거 후 다시 체크아웃 (줄바꿈 적용됨)
+git rm --cached -r .
+git reset --hard
+```
+
+이 방식은 Git을 통해 전체 줄바꿈을 LF로 통일합니다.
+
+---
