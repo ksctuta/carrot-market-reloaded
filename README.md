@@ -468,18 +468,36 @@ import Button from "../../../components/Button";
 - `@apply`는 가능한 최소화하고, 클래스 utility 우선 사용
 - 클래스 순서는 `레이아웃 → 박스모델 → 타이포그래피 → 상태 → 반응형` 순
 - 조건부 클래스는 `clsx` 또는 `classnames` 사용
+  > 예: `flex w-full p-4 text-sm text-gray-700 hover:text-black md:text-base`
+
+---
+
+### ✅ 클래스 순서 예시
+
+| 구분         | 예시 클래스                                |
+| ------------ | ------------------------------------------ |
+| 레이아웃     | `flex`, `grid`, `items-center`             |
+| 박스모델     | `p-4`, `px-2`, `w-full`, `h-10`            |
+| 타이포그래피 | `text-sm`, `font-bold`, `text-gray-700`    |
+| 상태         | `hover:bg-blue-500`, `disabled:opacity-50` |
+| 반응형       | `md:text-base`, `lg:p-6`                   |
+
+### ✅ 권장 사용 예시
 
 ```tsx
-// ✅ 권장 예시 1
+
+// 예시 1: 일반 버튼
 <button className="flex items-center justify-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700">
   Click me
 </button>
 
-// ✅ 권장 예시 2
+// 예시 2: 반응형 텍스트
 <div className="flex w-full p-4 text-sm text-gray-700 hover:text-black md:text-base" />
 
-// ✅ 권장 예시 3
-<div className={clsx("flex p-4", isActive && "bg-blue-500", "text-white")}>Hello</div>
+// 예시 3: 조건부 클래스는 clsx 사용
+<div className={clsx("flex p-4", isActive && "bg-blue-500", "text-white")}>
+  Hello
+</div>
 
 ```
 
