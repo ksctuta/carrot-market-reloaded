@@ -20,22 +20,22 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
 export default function SampleListAnimations() {
   return (
-    <main className="bg-gray-100 sm:bg-red-100 md:bg-green-100 lg:bg-cyan-100 xl:bg-orange-100 2xl:bg-purple-100 h-screen flex items-center justify-center py-10">
-      <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-2 ">
+    <main className="flex h-screen items-center justify-center bg-gray-100 py-10 sm:bg-red-100 md:bg-green-100 lg:bg-cyan-100 xl:bg-orange-100 2xl:bg-purple-100">
+      <div className="flex w-full max-w-screen-sm flex-col gap-2 rounded-3xl bg-white p-5 shadow-lg">
         {["피카츄", "라이츄", "파이리", "꼬부기", ""].map((person, index) => (
           <div
             key={index}
-            className="flex items-center gap-5 p-2.5 rounded-xl pb-5 border-b-1 odd:bg-gray-100 even:bg-cyan-100 last:border-0 last:border-b-0"
+            className="flex items-center gap-5 rounded-xl border-b-1 p-2.5 pb-5 last:border-0 last:border-b-0 odd:bg-gray-100 even:bg-cyan-100"
           >
-            <div className="size-10 bg-blue-400 rounded-full" />
+            <div className="size-10 rounded-full bg-blue-400" />
 
-            <span className="text-lg font-medium animate-bounce empty:w-24 empty:h-5 empty:rounded-full empty:animate-pulse empty:bg-gray-300">
+            <span className="animate-bounce text-lg font-medium empty:h-5 empty:w-24 empty:animate-pulse empty:rounded-full empty:bg-gray-300">
               {person}
             </span>
 
-            <div className="size-6 bg-red-500 text-white flex items-center justify-center rounded-full relative    ">
+            <div className="relative flex size-6 items-center justify-center rounded-full bg-red-500 text-white">
               <span className="z-10">{index}</span>
-              <div className="size-6 bg-red-500 rounded-full absolute animate-ping" />
+              <div className="absolute size-6 animate-ping rounded-full bg-red-500" />
             </div>
           </div>
         ))}

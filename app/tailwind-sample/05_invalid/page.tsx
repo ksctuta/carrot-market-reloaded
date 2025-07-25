@@ -15,21 +15,20 @@
 // https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state
 export default function SampleInvalid() {
   return (
-    <main className="bg-gray-100 h-screen flex items-center justify-center py-10">
-      <div className="bg-white md:flex-row shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-2">
+    <main className="flex h-screen items-center justify-center bg-gray-100 py-10">
+      <div className="flex w-full max-w-screen-sm flex-col gap-2 rounded-3xl bg-white p-5 shadow-lg md:flex-row">
         <input
-          className="w-full rounded-full h-10 bg-gray-100 pl-5 outline-none ring ring-transparent focus:ring-green-500 focus:ring-offset-2 transition-shadow placeholder:drop-shadow invalid:focus:ring-red-500 peer"
+          className="peer h-10 w-full rounded-full bg-gray-100 pl-5 ring ring-transparent transition-shadow outline-none placeholder:drop-shadow focus:ring-green-500 focus:ring-offset-2 invalid:focus:ring-red-500"
           type="email"
           required
           placeholder="Email address"
         />
-        <span className="text-red-500 font-medium hidden peer-invalid:block">
+        <span className="hidden font-medium text-red-500 peer-invalid:block">
           Email is required.
         </span>
         <button
           type="button"
-          className="text-white py-2 rounded-full active:scale-90 transition-transform font-medium outline-none md:px-10
-          bg-black peer-invalid:bg-red-100"
+          className="rounded-full bg-black py-2 font-medium text-white transition-transform outline-none peer-invalid:bg-red-100 active:scale-90 md:px-10"
         >
           Login
         </button>

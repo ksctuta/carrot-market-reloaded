@@ -9,7 +9,7 @@
 ## 📁 프로젝트 구조 규칙
 
 - 디렉토리 구조는 **기능 중심 (feature-based)** 으로 구성합니다.
-- `pages/`, `app/`, `components/`, `hooks/`, `utils/`, `styles/`, `types/` 등은 최상위에 위치합니다.
+- `app/`, `components/`, `hooks/`, `utils/`, `styles/`, `types/` 등은 최상위에 위치합니다.
 
 ```ts
 // ❌ 지양
@@ -26,6 +26,7 @@ import Button from "../../../components/Button";
 ### ✅ 파일 & 컴포넌트 명명
 
 - 파일 이름: `camelCase` (ex. `userCard.tsx`)
+- ㄴ 해당 부분 nextjs15 사용 시 페이지 일 경우 폴더 밑 page.tsx 통일 (AppRoute 방식)
 - 컴포넌트 이름: `PascalCase` (ex. `UserCard`)
 - 훅: `use` 접두사로 시작 (ex. `useUserData`)
 - 스타일 모듈: `*.module.css` 또는 TailwindCSS 사용
@@ -42,6 +43,7 @@ import Button from "../../../components/Button";
   - 줄 최대 길이 80자 (`printWidth: 80`)
   - 들여쓰기 2칸 (`tabWidth: 2`)
   - 마지막 쉼표 유지 (`trailingComma: es5`)
+  - EOL LF 로 변경 처리 (윈도우에서 발생하는 ␍ 문제 방지) (`endOfLine: lf`)
 
 ```jsonc
 // .prettierrc
@@ -52,6 +54,8 @@ import Button from "../../../components/Button";
   "tabWidth": 2,
   "trailingComma": "es5",
   "endOfLine": "lf",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["clsx", "classnames", "cva"],
 }
 ```
 
@@ -59,15 +63,23 @@ import Button from "../../../components/Button";
 
 ## 💅 TailwindCSS 스타일 가이드
 
+- `prettier-plugin-tailwindcss` 적용 클래스 순서는
 - `@apply`는 가능한 최소화하고, 클래스 utility 우선 사용
 - 클래스 순서는 `레이아웃 → 박스모델 → 타이포그래피 → 상태 → 반응형` 순
 - 조건부 클래스는 `clsx` 또는 `classnames` 사용
 
 ```tsx
-// ✅ 권장 예시
+// ✅ 권장 예시 1
 <button className="flex items-center justify-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700">
   Click me
 </button>
+
+// ✅ 권장 예시 2
+<div className="flex w-full p-4 text-sm text-gray-700 hover:text-black md:text-base" />
+
+// ✅ 권장 예시 3
+<div className={clsx("flex p-4", isActive && "bg-blue-500", "text-white")}>Hello</div>
+
 ```
 
 ---

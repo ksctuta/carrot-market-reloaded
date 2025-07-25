@@ -10,7 +10,8 @@
 
   // 저장 시 ESLint가 자동으로 fix (권장 방식: explicit)
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit",
   },
 
   // ESLint 포맷 기능 사용
@@ -25,6 +26,16 @@
     "javascriptreact",
     "typescript",
     "typescriptreact"
+  ],
+
+  // Tailwind CSS IntelliSense가 지원하는 class 이름 자동 정렬을 활성화합니다.
+  "tailwindCSS.experimental.classRegex": [
+    // clsx(`...`)
+    ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+    // classnames('...')
+    ["classnames\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"],
+    // tw`...`
+    ["tw`([^`]*)`", "tw`([^`]*)`"]
   ],
 
   // 프로젝트에 .prettierrc 있을 때만 Prettier 활성화 (중복 방지)

@@ -1,10 +1,8 @@
-# carrot-market-reloaded
-
-# nextjs14
-
 ### .md 파일은 단축키 Ctrl+Shift+V 사용해서 보세요. (VS Code)
 
 # Carrot Market Reloaded
+
+Next.js + React + TypeScript + TailwindCSS + Node Server
 
 # 📁 프로젝트 디렉토리 구조 (Next.js 15 기반)
 
@@ -59,64 +57,6 @@
 
 ---
 
----
-
-## ⚙️ 주요 설정 파일 설명
-
-| 파일명               | 설명                                 |
-| -------------------- | ------------------------------------ |
-| `.gitignore`         | Git으로 추적하지 않아야 할 파일 목록 |
-| `next.config.ts`     | Next.js 전역 설정                    |
-| `tsconfig.json`      | TypeScript 컴파일 설정               |
-| `eslint.config.mjs`  | 코드 스타일 검사를 위한 ESLint 설정  |
-| `postcss.config.mjs` | Tailwind 및 PostCSS 설정 파일        |
-
----
-
-## ✅ `.gitignore` 예시
-
-```gitignore
-node_modules/
-.next/
-dist/
-.env*
-.DS_Store
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
-```
-
----
-
-## ⚡ 사용 가능한 스크립트 (`package.json`)
-
-```json
-{
-  "scripts": {
-    "dev": "next dev --turbopack -p 3030",
-    "build": "next build",
-    "start": "next start -p 3030",
-    "lint": "eslint \"./**/*.+(ts|tsx)\"",
-    "lint:fix": "eslint \"./**/*.+(ts|tsx)\" --fix",
-    "format": "prettier . --write",
-    "format:check": "prettier . --check"
-  }
-}
-```
-
-| 명령어             | 설명                                   |
-| ------------------ | -------------------------------------- |
-| `npm run dev`      | 로컬 개발 서버 실행 (`localhost:3030`) |
-| `npm run build`    | 배포용 번들 빌드 생성                  |
-| `npm run start`    | 빌드된 앱 실행 (Production)            |
-| `npm run lint`     | 코드 스타일 검사 실행                  |
-| `npm run lint:fix` | 코드 스타일 자동 수정 실행             |
-| `npm run test`     | 테스트 코드 실행 (Jest 기준)           |
-
-|
-
----
-
 ## 🧰 개발환경 준비하기
 
 ### 📌 Git 설치 (Windows 기준)
@@ -131,8 +71,8 @@ pnpm-debug.log*
 ### 📌 Git으로 프로젝트 Clone 하기
 
 ```bash
-git clone https://github.com/your-repo/your-project.git
-cd your-project
+git clone http://git.acronode.co.kr/acro-pub/acronode-node-pub.git
+cd acronode-node-pub
 ```
 
 ---
@@ -208,13 +148,17 @@ npm run dev
 
 ---
 
-## Front-End 코드 컨벤션 필독사항 (Eslint + Prettier 스타일)
+## 🧭 Front-End 코드 컨벤션 필독사항 (Eslint + Prettier 스타일)
 
 > 개발자 & 퍼블리셔 필독사항 : [README-CODE-CONVENSION.md](README-CODE-CONVENSION.md)
 
-## VSCode 확장 프로그램 설치 - SETUP GUIDE
+---
+
+## 🧩 VSCode 확장 프로그램 설치 - SETUP GUIDE
 
 > 개발자 & 퍼블리셔 필독사항 : [README-VSCODE-SETUP-GUIDE.md](README-VSCODE-SETUP-GUIDE.md)
+
+---
 
 ## 📚 기타
 
@@ -256,7 +200,101 @@ npm install -D eslint
 }
 ```
 
-> 라이브러리 추가 후 `package-lock.json` 또는 `yarn.lock` 파일도 함께 변경됩니다.
+> 라이브러리 추가 후 `package-lock.json` 파일이 변경됩니다.
+
+---
+
+## ⚙️ 주요 설정 파일 설명
+
+| 파일명               | 설명                                 |
+| -------------------- | ------------------------------------ |
+| `.gitignore`         | Git으로 추적하지 않아야 할 파일 목록 |
+| `next.config.ts`     | Next.js 전역 설정                    |
+| `tsconfig.json`      | TypeScript 컴파일 설정               |
+| `eslint.config.mjs`  | 코드 스타일 검사를 위한 ESLint 설정  |
+| `postcss.config.mjs` | Tailwind 및 PostCSS 설정 파일        |
+
+---
+
+## ✅ `.gitignore` 예시
+
+```gitignore
+node_modules/
+.next/
+dist/
+.env*
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+```
+
+---
+
+## ⚡ 사용 가능한 스크립트 (`package.json`)
+
+```json
+{
+  "scripts": {
+    "dev": "next dev --turbopack -p 3030",
+    "build": "next build",
+    "start": "next start -p 3030",
+    "lint": "eslint \"./**/*.+(ts|tsx)\"",
+    "lint:fix": "eslint \"./**/*.+(ts|tsx)\" --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "fix": "npm run format && npm run lint:fix",
+    "test": "jest"
+  }
+}
+```
+
+| 명령어                 | 설명                                                                      |
+| ---------------------- | ------------------------------------------------------------------------- |
+| `npm run dev`          | 로컬 개발 서버 실행 (`http://localhost:3030`)                             |
+| `npm run build`        | 배포용 번들 빌드 생성                                                     |
+| `npm run start`        | 빌드된 앱 실행 (Production 환경에서)                                      |
+| `npm run lint`         | ESLint를 사용해 코드 스타일 검사 실행                                     |
+| `npm run lint:fix`     | ESLint로 코드 자동 수정 실행                                              |
+| `npm run format`       | Prettier를 사용해 전체 코드 포맷 자동 정리                                |
+| `npm run format:check` | Prettier 포맷 확인 (CI/CD에서 사용)                                       |
+| `npm run fix`          | 포맷팅 + 린트를 동시에 실행하여 전체 코드 스타일 자동 정리                |
+| `npm run test`         | 테스트 실행 (예: Jest 기반 테스트 실행용 — `jest`가 설치되어 있어야 작동) |
+
+|
+
+---
+
+## 🎨 Tailwind CSS 샘플
+
+Tailwind CSS를 활용한 UI 예제 코드가 포함되어 있습니다.  
+해당 샘플은 프로젝트 내 [`./app/tailwind-sample`](./app/tailwind-sample) 디렉토리에 위치해 있으며, 개발 서버 실행 후 아래 주소에서 확인할 수 있습니다.
+
+📍 **접속 URL:** [http://localhost:3030/tailwind-sample](http://localhost:3030/tailwind-sample)
+
+---
+
+### 📁 구성 요소
+
+- **Tailwind 설정 파일**
+  - `tailwind.config.js`, `postcss.config.js`
+- **스타일 예제**
+  - 버튼, 카드, 그리드 레이아웃 등 기본 UI 컴포넌트 포함
+- **뷰 파일**
+  - 샘플 페이지: `index.html` 또는 라우트 방식에 따라 렌더링
+
+---
+
+### ▶️ 실행 방법
+
+```bash
+
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+```
 
 ---
 
@@ -265,22 +303,18 @@ npm install -D eslint
 먼저 아래 확장 프로그램을 설치하세요.
 
 - **ESLint** (필수)
-
   - Marketplace 링크: [ESLint - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - 기능: 코드 내 ESLint 규칙 위반을 실시간으로 검사하고, 자동 수정 기능 제공
 
 - **Prettier - Code formatter** (필수)
-
   - Marketplace 링크: [Prettier - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
   - 기능: 코드 포맷팅을 자동으로 해주는 인기 있는 도구
 
 - **Tailwind CSS IntelliSense** (필수)
-
   - Marketplace 링크: [Tailwind CSS - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
   - 기능: Tailwind CSS 클래스 자동완성, 문서 툴팁, 색상 미리보기 등 지원 (Next.js 사용 시 특히 유용)
 
 - **Material Icon Theme** (선택)
-
   - Marketplace 링크: [Material Icon Theme - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme)
   - 기능: 폴더 및 파일에 직관적인 아이콘 테마 적용으로 가독성과 생산성 향상
 
@@ -307,9 +341,13 @@ npm install -D eslint
   // 기본 포맷터로 Prettier 지정
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
+  // 줄바꿈은 LF 사용 (Windows의 CRLF 방지)
+  "files.eol": "\n",
+
   // 저장 시 ESLint가 자동으로 fix (권장 방식: explicit)
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
   },
 
   // ESLint 포맷 기능 사용
@@ -372,7 +410,7 @@ npm install -D eslint
 ## 📁 프로젝트 구조 규칙
 
 - 디렉토리 구조는 **기능 중심 (feature-based)** 으로 구성합니다.
-- `pages/`, `app/`, `components/`, `hooks/`, `utils/`, `styles/`, `types/` 등은 최상위에 위치합니다.
+- `app/`, `components/`, `hooks/`, `utils/`, `styles/`, `types/` 등은 최상위에 위치합니다.
 
 ```ts
 // ❌ 지양
@@ -389,6 +427,7 @@ import Button from "../../../components/Button";
 ### ✅ 파일 & 컴포넌트 명명
 
 - 파일 이름: `camelCase` (ex. `userCard.tsx`)
+- ㄴ 해당 부분 nextjs15 사용 시 페이지 일 경우 폴더 밑 page.tsx 통일 (AppRoute 방식)
 - 컴포넌트 이름: `PascalCase` (ex. `UserCard`)
 - 훅: `use` 접두사로 시작 (ex. `useUserData`)
 - 스타일 모듈: `*.module.css` 또는 TailwindCSS 사용
@@ -405,6 +444,7 @@ import Button from "../../../components/Button";
   - 줄 최대 길이 80자 (`printWidth: 80`)
   - 들여쓰기 2칸 (`tabWidth: 2`)
   - 마지막 쉼표 유지 (`trailingComma: es5`)
+  - EOL LF 로 변경 처리 (윈도우에서 발생하는 ␍ 문제 방지) (`endOfLine: lf`)
 
 ```jsonc
 // .prettierrc
@@ -415,6 +455,8 @@ import Button from "../../../components/Button";
   "tabWidth": 2,
   "trailingComma": "es5",
   "endOfLine": "lf",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["clsx", "classnames", "cva"],
 }
 ```
 
@@ -422,15 +464,23 @@ import Button from "../../../components/Button";
 
 ## 💅 TailwindCSS 스타일 가이드
 
+- `prettier-plugin-tailwindcss` 적용
 - `@apply`는 가능한 최소화하고, 클래스 utility 우선 사용
 - 클래스 순서는 `레이아웃 → 박스모델 → 타이포그래피 → 상태 → 반응형` 순
 - 조건부 클래스는 `clsx` 또는 `classnames` 사용
 
 ```tsx
-// ✅ 권장 예시
+// ✅ 권장 예시 1
 <button className="flex items-center justify-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700">
   Click me
 </button>
+
+// ✅ 권장 예시 2
+<div className="flex w-full p-4 text-sm text-gray-700 hover:text-black md:text-base" />
+
+// ✅ 권장 예시 3
+<div className={clsx("flex p-4", isActive && "bg-blue-500", "text-white")}>Hello</div>
+
 ```
 
 ---
@@ -500,3 +550,27 @@ git reset --hard
 이 방식은 Git을 통해 전체 줄바꿈을 LF로 통일합니다.
 
 ---
+
+## 📚 공식 기술 문서 링크 (Docs)
+
+| 기술 스택                        | 설명                                 | 공식 문서 URL                                                                                                                                        |
+| -------------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Next.js 15**                   | React 기반 웹 프레임워크             | [https://nextjs.org/docs](https://nextjs.org/docs)                                                                                                   |
+| **React 19**                     | UI 라이브러리                        | [https://react.dev](https://react.dev)                                                                                                               |
+| **TypeScript**                   | 타입 지원 JavaScript                 | [https://www.typescriptlang.org/docs](https://www.typescriptlang.org/docs)                                                                           |
+| **Tailwind CSS**                 | 유틸리티 기반 CSS 프레임워크 JIT사용 | [https://tailwindcss.com/docs](https://tailwindcss.com/docs)                                                                                         |
+| **ESLint**                       | 코드 스타일 린팅 도구                | [https://eslint.org/docs/latest/](https://eslint.org/docs/latest/)                                                                                   |
+| **Prettier**                     | 코드 포맷터                          | [https://prettier.io/docs/en/](https://prettier.io/docs/en/)                                                                                         |
+| **prettier-plugin-sort-imports** | import 정렬 Prettier 플러그인        | [https://github.com/ianvs/prettier-plugin-sort-imports](https://github.com/ianvs/prettier-plugin-sort-imports)                                       |
+| **prettier-plugin-sort-json**    | JSON key 정렬 플러그인               | [https://github.com/sirocchj/prettier-plugin-sort-json](https://github.com/sirocchj/prettier-plugin-sort-json)                                       |
+| **eslint-config-next**           | Next.js 전용 ESLint 설정             | [https://nextjs.org/docs/app/building-your-application/configuring/eslint](https://nextjs.org/docs/app/building-your-application/configuring/eslint) |
+| **@typescript-eslint**           | ESLint + TypeScript 통합             | [https://typescript-eslint.io](https://typescript-eslint.io)                                                                                         |
+
+---
+
+### ✨ 사용된 주요 기술들 요약
+
+- **Next.js 15**, **React 19**, **TypeScript**, **Tailwind CSS**
+- **ESLint + Prettier** 통합
+- import 및 JSON key 자동 정렬 플러그인 사용
+- **Turbopack 기반 dev 서버**
