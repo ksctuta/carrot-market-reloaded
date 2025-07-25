@@ -1,7 +1,44 @@
 @import "tailwindcss";
+/* tailwindcss 사용 시 유틸리티를 사용하여 form 요소를 쉽게 재정의할 수 있도록 form 스타일에 대한 기본 reset을 제공하는 플러그인입니다. */
+/* tailwind form style CSS용 컴포넌트 라이브러리  */
+/* @plugin "@tailwindcss/forms"; */
+/* // daisyUI Tailwind CSS용 컴포넌트 라이브러리 https://daisyui.com */
+/* @plugin "daisyui"; */
+
 /* 
+변경 전
 Tailwindcss 4.x 변경이후 상단 import 방식으로 변경되어 해당 부분 생략됨.
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+변경 후
+@import "tailwindcss"
  */
+
+/* Default 값 설정 시 [a, div 이렇게 있을 경우 선택자(Selector) 명확하게 지정 해서 사용해주세요.] */
+
+/* 다른 라이브러리 사용 시 3rdParty 라이브러리/플러그인에 영향이 가게 되면 안됩니다. */
+
+/* css 제어 [className] / 기능 [id] 로 제어 */
+
+/* [예시] /tailwind-sample/09_directives */
+@layer base {
+  button.bs-submit {
+    @apply text-blue-400;
+  }
+}
+
+@layer components {
+  button.cp-btnSubmit {
+    @apply h-10 w-full rounded-full bg-black;
+  }
+}
+
+@layer utilities {
+  button.ut-font-size-30 {
+    @apply text-3xl;
+  }
+  button.ut-font-semibold {
+    @apply font-semibold;
+  }
+}

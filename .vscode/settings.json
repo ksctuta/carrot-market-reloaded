@@ -38,6 +38,13 @@
     ["tw`([^`]*)`", "tw`([^`]*)`"]
   ],
 
+  // SCSS 파일에서 TailwindCSS의 @apply, @tailwind 등 사용자 정의 at-rule을 오류로 인식하지 않도록 무시
+  "scss.lint.unknownAtRules": "ignore",
+
+  // TailwindCSS의 사용자 정의 설명 정보를 담은 JSON 파일(tailwind.json)을 VSCode CSS 언어 서버에 등록
+  // 이로 인해 Tailwind 전용 디렉티브(@apply 등)에 대한 자동완성, hover 설명 등이 지원됨
+  "css.customData": [".vscode/tailwind.json"],
+
   // 프로젝트에 .prettierrc 있을 때만 Prettier 활성화 (중복 방지)
   "prettier.requireConfig": true,
 
@@ -47,6 +54,28 @@
 
   // 파일 이동 시 import 경로 자동 업데이트
   "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // JavaScript 파일에서 자동 임포트 추천 활성화
+  "javascript.suggest.autoImports": true,
+
+  // TypeScript 파일에서 자동 임포트 추천 활성화
+  "typescript.suggest.autoImports": true,
+
+  // 파일을 다른 위치로 이동했을 때, 관련된 import 경로를 자동으로 업데이트
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // import 경로를 절대 경로 또는 패키지 경로로 설정 (예: "@/components/Button")
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
+  // 자동 완성 제안 설정
+  "editor.quickSuggestions": {
+    "other": true,     // 코드 내부 요소에 대한 자동 제안
+    "comments": false, // 주석에서는 제안하지 않음
+    "strings": true    // 문자열 내부에서도 제안
+  },
+
+  // 자동 완성 시 가장 먼저 선택되는 항목 지정
+  "editor.suggestSelection": "first",
 
   // 💡 파일 유형별 포맷터 지정 (Prettier + ESLint 조합 사용 시)
   "[javascript]": {

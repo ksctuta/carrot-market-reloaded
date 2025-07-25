@@ -70,7 +70,7 @@ export default [
   ...compat
     .extends(
       "plugin:@typescript-eslint/recommended", // TypeScript 추천 규칙
-      "prettier", // Prettier와 충돌 제거
+      "prettier" // Prettier와 충돌 제거
     )
     .map((config) => ({
       ...config,

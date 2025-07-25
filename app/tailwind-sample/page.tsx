@@ -55,6 +55,12 @@ export default function TailwindSampleList() {
           >
             08_group_modifiers
           </Link>
+          <Link
+            href="/tailwind-sample/09_directives"
+            className="font-semibold text-gray-500 hover:text-cyan-500"
+          >
+            09_directives
+          </Link>
         </div>
       </div>
     </main>
